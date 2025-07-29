@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            position: relative;
+            z-index: 1;
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+
+        /* Full-screen Floating Stylish Notice */
+        .notice-btn-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Dark background to cover entire screen */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10; /* Make sure it is above login form */
+            text-align: center;
+            box-sizing: border-box;
+            padding: 20px;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .notice-btn-container a {
+            color: #0088cc; /* Telegram cyan color for link */
+            text-decoration: none;
+        }
+
+        .notice-btn-container:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .close-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .notice-text {
+            font-size: 16px;
+        }
+
+        /* Different color styles for text */
+        .welcome-text {
+            color: white;
+        }
+
+        .developer-text {
+            color: #4CAF50; /* Green color */
+        }
+
+        .community-text {
+            color: #0088cc; /* Telegram color */
+            margin-top: 20px; /* Add space from the above text */
+        }
+
+        /* Join Now button styled as a box */
+        .join-now-box {
+            display: inline-block;
+            background-color: #87CEEB; /* Light Sky Blue color */
+            color: #333; /* Dark black color for text */
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px; /* Add space from the above text */
+        }
+
+        .join-now-box:hover {
+            background-color: #66b3cc; /* Slightly darker shade of light blue on hover */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Notice Button Container (floating over the screen) -->
+    <div class="notice-btn-container" id="noticeBtnContainer">
+        <span class="close-icon" onclick="closeNotice()">×</span>
+        <div>
+            <div class="welcome-text">📢 Welcome to Our API Package Web Host</div>
+            <div class="developer-text">This web developed by MD HASIB</div>
+            <div class="developer-text">Owner RF Programming HUB BD</div>
+            <div class="community-text">Join Our Community</div>
+            <a href="https://t.me/+P1SFZuULqeA2NDg9" target="_blank" class="join-now-box">🔗 Join Now</a>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div class="login-container" id="loginFormContainer">
+        <h2>Login Page</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Admin Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        // Handle login form submission
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === "RF ALL API HUB" && password === "MD HASIB") {
+                alert("Login Successful!");
+                window.location.href = "https://twfhost.rf.gd/uploads/ab43597a990ade053d2561b9d45c6565/1753759042_target.html"; // Replace with your target page URL
+            } else {
+                alert("Incorrect password!");
+            }
+        });
+
+        // Close the notice button and show login form
+        function closeNotice() {
+            document.getElementById('noticeBtnContainer').style.display = 'none'; // Hide notice
+            document.getElementById('loginFormContainer').style.zIndex = '1'; // Show login form
+        }
+    </script>
+
+</body>
+</html>
